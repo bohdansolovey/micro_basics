@@ -1,0 +1,5 @@
+.idea
+facade/__pycache__
+logging_service/__pycache__
+micro_venv
+protos/__pycache__

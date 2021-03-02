@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+
+service Logging {
+    rpc getLogging(GetLoggingRequest) returns (GetLoggingResponse) {}
+    rpc postLogging(PostLoggingRequest) returns (PostLoggingResponse) {}
+}
+
+message PostLoggingRequest {
+    string uuid = 1;
+    string msg = 2;
+}
+
+message PostLoggingResponse {
+    int32 status = 1;
+}
+
+message GetLoggingResponse {
+    string messages = 1;
+}
+
+message GetLoggingRequest {
+
+}
