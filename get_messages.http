@@ -1,0 +1,4 @@
+GET http://0.0.0.0:1233/facade-service
+Accept: application/json
+
+###
