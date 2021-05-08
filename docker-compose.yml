@@ -25,3 +25,11 @@ services:
       - local
     ports:
       - 5703:5701
+  rabbitmq:
+    image: rabbitmq:3-management
+    networks:
+      - local
+    ports:
+      - 5672:5672
+      - 15672:15672
+
