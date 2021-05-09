@@ -53,7 +53,7 @@ steps:
     commands:
       - echo "TESTS EXECUTED"
   - name: build-push-image
-    image: python:3.9-slim
+    image: docker:dind
     commands:
       - docker build .
       - echo 'push image'
