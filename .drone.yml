@@ -52,14 +52,13 @@ steps:
     image: python:3.9-alpine
     commands:
       - echo "TESTS EXECUTED"
-  - name: proto-compile
-    image: python:3.9-alpine
-    commands:
-      - pip install -r requirements.txt
-      - chmod +x clone_and_compile_proto.sh
-      - ./clone_and_compile_proto.sh
-  - name: build
+  - name: build-push-image
     image: python:3.9-slim
     commands:
       - docker build .
-
+      - echo 'push image'
+  - name: update-remote-project
+    image: alpine
+    commands:
+      - echo 'ssh connect to remote'
+      - echo 'docker-compose -f docker-compose-develop.yml up'
