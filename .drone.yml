@@ -34,7 +34,7 @@ steps:
       - echo hello
       - echo world
   - name: install-libs
-    image: python:3.9-slim
+    image: python:3.9-alpine
     commands:
       - apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -49,11 +49,11 @@ steps:
         && rm -rf /var/lib/apt/lists/*
       - pip install -r requirements.txt
   - name: test
-    image: python:3.9-slim
+    image: python:3.9-alpine
     commands:
       - echo "TESTS EXECUTED"
   - name: proto-compile
-    image: python:3.9-slim
+    image: python:3.9-alpine
     commands:
       - pip install -r requirements.txt
       - chmod +x clone_and_compile_proto.sh
@@ -61,5 +61,5 @@ steps:
   - name: build
     image: python:3.9-slim
     commands:
-      - echo "docker build ."
+      - docker build .
 
