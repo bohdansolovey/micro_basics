@@ -55,8 +55,8 @@ steps:
   - name: build-push-image
     image: docker:dind
     commands:
-      - echo "sleep 12s(wait docker)"
-      - sleep 12
+      - systemctl enable docker.service
+      - systemctl enable containerd.service
       - docker build .
       - echo 'push image'
   - name: update-remote-project
