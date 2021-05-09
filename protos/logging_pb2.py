@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rlogging.proto\"/\n\x12PostLoggingRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\"%\n\x13PostLoggingResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"&\n\x12GetLoggingResponse\x12\x10\n\x08messages\x18\x01 \x01(\t\"\x13\n\x11GetLoggingRequest2~\n\x07Logging\x12\x37\n\ngetLogging\x12\x12.GetLoggingRequest\x1a\x13.GetLoggingResponse\"\x00\x12:\n\x0bpostLogging\x12\x13.PostLoggingRequest\x1a\x14.PostLoggingResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\rlogging.proto\"/\n\x12PostLoggingRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\"%\n\x13PostLoggingResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"&\n\x12GetLoggingResponse\x12\x10\n\x08messages\x18\x01 \x03(\t\"\x13\n\x11GetLoggingRequest2~\n\x07Logging\x12\x37\n\ngetLogging\x12\x12.GetLoggingRequest\x1a\x13.GetLoggingResponse\"\x00\x12:\n\x0bpostLogging\x12\x13.PostLoggingRequest\x1a\x14.PostLoggingResponse\"\x00\x62\x06proto3'
 )
 
 
@@ -106,8 +106,8 @@ _GETLOGGINGRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='messages', full_name='GetLoggingResponse.messages', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

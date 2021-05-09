@@ -16,7 +16,7 @@ message PostLoggingResponse {
 }
 
 message GetLoggingResponse {
-    string messages = 1;
+    repeated string messages = 1;
 }
 
 message GetLoggingRequest {
