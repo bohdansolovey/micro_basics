@@ -1,0 +1,1 @@
+python3 -m grpc_tools.protoc -I protobufs --python_out=protos/ --grpc_python_out=protos/ protobufs/logging.proto
