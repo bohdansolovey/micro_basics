@@ -42,12 +42,14 @@ steps:
   commands:
   - echo "TESTS EXECUTED"
 - name: proto-compile
-  image: python:3.7-alpine
+  image: python:3.7
+  privileged: true
   commands:
-  - chmod +x clone_and_compile_proto.sh
-  - ./clone_and_compile_proto.sh
+    - pip install -r requirements.txt
+    - chmod +x clone_and_compile_proto.sh
+    - ./clone_and_compile_proto.sh
 - name: build
-  image: python:3.7-alpine
+  image: python:3.7
   commands:
   - echo "docker build ."
 
