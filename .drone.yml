@@ -43,7 +43,6 @@ steps:
   - echo "TESTS EXECUTED"
 - name: proto-compile
   image: python:3.7
-  privileged: true
   commands:
     - pip install -r requirements.txt
     - chmod +x clone_and_compile_proto.sh
