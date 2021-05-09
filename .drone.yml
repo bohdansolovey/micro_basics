@@ -52,12 +52,12 @@ steps:
     image: python:3.9-alpine
     commands:
       - echo "TESTS EXECUTED"
-  - name: proto-compile
+  - name: test-messages-start
     image: python:3.9-alpine
     commands:
       - pip install -r requirements.txt
-      - chmod +x clone_and_compile_proto.sh
-      - ./clone_and_compile_proto.sh
+      - chmod +x start_messages.sh
+      - ./start_messages.sh
   - name: build
     image: python:3.9-slim
     commands:
