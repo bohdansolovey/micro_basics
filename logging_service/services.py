@@ -10,7 +10,7 @@ from protos.logging_pb2 import PostLoggingResponse, GetLoggingResponse
 class LoggingService(
     logging_pb2_grpc.LoggingServicer
 ):
-    def __init__(self, hazelcast_instance_addr, map_name='some_d'):
+    def __init__(self, hazelcast_instance_addr, map_name='new'):
         self.map_name = map_name
         self.client = hazelcast.HazelcastClient(
             cluster_name="dev",

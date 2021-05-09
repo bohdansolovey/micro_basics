@@ -1,0 +1,53 @@
+#docker run \
+#  --volume=/var/lib/drone:/data \
+#  --env=DRONE_GITHUB_CLIENT_ID=0481936a4a66c1a0d74d \
+#  --env=DRONE_GITHUB_CLIENT_SECRET=1fede65ae9c024408e1750f7368ce67e2363e28b \
+#  --env=DRONE_RPC_SECRET=secret \
+#  --env=DRONE_SERVER_HOST=7fd837880056.ngrok.io \
+#  --env=DRONE_SERVER_PROTO=http \
+#  --publish=80:80 \
+#  --publish=443:443 \
+#  --restart=always \
+#  --detach=true \
+#  --name=drone \
+#  drone/drone:1
+#
+#docker run -d \
+#  -v /var/run/docker.sock:/var/run/docker.sock \
+#  -e DRONE_RPC_PROTO=http \
+#  -e DRONE_RPC_HOST=7fd837880056.ngrok.io \
+#  -e DRONE_RPC_SECRET=secret \
+#  -e DRONE_RUNNER_CAPACITY=2 \
+#  -e DRONE_RUNNER_NAME=${HOSTNAME} \
+#  -p 3000:3000 \
+#  --restart always \
+#  --name runner \
+#  drone/drone-runner-docker:1
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: greeting
+  image: alpine
+  commands:
+  - echo hello
+  - echo world
+- name: install-libs
+  image: python:3.7-alpine
+  commands:
+  - pip install -r requirements.txt
+- name: test
+  image: python:3.7-alpine
+  commands:
+  - echo "TESTS EXECUTED"
+- name: proto-compile
+  image: python:3.7-alpine
+  commands:
+  - chmod +x clone_and_compile_proto.sh
+  - ./clone_and_compile_proto.sh
+- name: build
+  image: python:3.7-alpine
+  commands:
+  - echo "docker build ."
+
