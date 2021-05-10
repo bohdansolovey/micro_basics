@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9-alpine
 RUN apk add --no-cache bash git curl
 RUN mkdir /data
 WORKDIR /app
